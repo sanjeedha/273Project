@@ -7,8 +7,11 @@ from fabric.contrib.files import exists
 app = Flask(__name__)
 
 env.key_filename = '~/.ssh/281master.pem'
+env.hosts = ['ec2-50-112-151-207.us-west-2.compute.amazonaws.com']
+env.user = 'ubuntu'
 
 nodes = {'Node1': ['App1', 'App2'], 'Node2': ['App3']}
+
 
 
 def create_folder_if_necessary(app_path):

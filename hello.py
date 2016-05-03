@@ -40,7 +40,7 @@ def create_or_update_virtualenv(app_path):
     :param app_path:
     :return:
     """
-    run('pip install virtualenv')
+    run('sudo pip install virtualenv')
     virtualenv = '{}/../virtualenv'.format(app_path)
     if not exists('{}/bin/pip'.format(virtualenv)):
         run('virtualenv {}'.format(virtualenv,))

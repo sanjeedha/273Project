@@ -6,7 +6,7 @@ from fabric.contrib.files import exists
 
 app = Flask(__name__)
 
-# env.password = 'HR1234!!'
+env.key_filename = '~/.ssh/281master.pem'
 
 nodes = {'Node1': ['App1', 'App2'], 'Node2': ['App3']}
 

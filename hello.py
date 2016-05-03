@@ -7,7 +7,7 @@ from fabric.contrib.files import exists
 app = Flask(__name__)
 
 env.key_filename = '~/.ssh/281master.pem'
-env.hosts = ['ec2-50-112-151-207.us-west-2.compute.amazonaws.com']
+ec2_hosts = ['ec2-50-112-151-207.us-west-2.compute.amazonaws.com']
 env.user = 'ubuntu'
 
 nodes = {'Node1': ['App1', 'App2'], 'Node2': ['App3']}
@@ -84,7 +84,7 @@ def picloud():
         app_name = content['app-name']
         port_num = content['port']
         git_repo = content['git_repo']
-        node_name = 'localhost'
+        node_name = ec2_hosts[0]
         execute(host_type, app_name, git_repo, port_num, host=node_name)
 
         return jsonify(content)

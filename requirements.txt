@@ -2,3 +2,4 @@ cryptography==1.1.1
 Fabric==1.11.1
 Flask==0.10.1
 pycrypto==2.6.1
+virtualenv==1.10.1
